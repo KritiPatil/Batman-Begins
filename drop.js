@@ -1,10 +1,8 @@
 class Drop {
     constructor(x, y, radius) {
       var options = {
-          'isStatic' : true,
-          'restitution':0.3,
-          'friction':0.5,
-          'density':1.2,
+          restitution : 0.3,
+          friction : 0.1
       }
       this.body = Bodies.circle(x, y, radius, options);
       this.radius = radius;
@@ -18,7 +16,7 @@ class Drop {
       push();
       translate(pos.x, pos.y);
       ellipseMode(CENTER);
-      fill ("white");
+      fill (25, 25, 112);
       ellipse(0, 0, this.radius);
       pop();
     }
