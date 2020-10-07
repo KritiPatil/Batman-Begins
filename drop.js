@@ -19,5 +19,10 @@ class Drop {
       fill (25, 25, 112);
       ellipse(0, 0, this.radius);
       pop();
+
+      if(pos.y >= 460 && pos.x <=120) {
+        this.body.visible = false;
+      }
     }
+
   };

@@ -9,7 +9,8 @@ var rain = [];
 var ground;
 var bruce, lightening;
 var b1, b2, b3, b4, b5, b6, b7, b8;
-var maxdrops = 100;
+var maxdrops = 1000;
+var umbrella, umbrella2;
 
 function preload(){
 
@@ -31,23 +32,31 @@ function setup(){
     bruce.addAnimation("walking", b1);
     bruce.scale = 0.5;
 
+    umbrella = Bodies.rectangle(200, 460, 150, 10);
+    umbrella.visible = false;
+    umbrella2 = Bodies.rectangle(120, 500, 10, 70);
+    umbrella2.visible = false;
+
     lightening = createSprite(200, 100, 10, 10);
     lightening.addAnimation("working", l1);
     lightening.scale = 0.5;
 
+
     for(var i = 0; i < maxdrops; i++) {
-        rain.push(new Drop(random(0, 400), random(0, 400)));
+        rain.push(new Drop(random(0, 400), random(-10000, 400), 10));
     }
 
     drawSprites();
+    console.log(rain);
 }
 
 function draw(){
     background("black");
     Engine.update(engine);
 
-    rain = new Drop(200, 200, 11);
-    rain.display(); 
+    for(var j = 0; j < maxdrops; j++) {
+        rain[j].display();
+    }
 
     drawSprites();
 }   
