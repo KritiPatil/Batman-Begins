@@ -19,10 +19,15 @@ class Drop {
       fill (25, 25, 112);
       ellipse(0, 0, this.radius);
       pop();
-
-      if(pos.y >= 460 && pos.x <=120) {
-        this.body.visible = false;
+      //console.log(pos.y);
       }
-    }
+
+      updateY() {
+        var pos =this.body.position;
+        if(pos.y > 700) {
+          Body.setPosition(random(0, 400), random(-10000, 400));
+          //console.log(pos);
+        }
+      }
 
   };

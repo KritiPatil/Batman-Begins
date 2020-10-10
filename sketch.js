@@ -47,7 +47,7 @@ function setup(){
     }
 
     drawSprites();
-    console.log(rain);
+    //console.log(rain);
 }
 
 function draw(){
@@ -56,6 +56,7 @@ function draw(){
 
     for(var j = 0; j < maxdrops; j++) {
         rain[j].display();
+        rain[j].updateY();
     }
 
     drawSprites();
