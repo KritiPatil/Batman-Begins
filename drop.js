@@ -25,7 +25,7 @@ class Drop {
       updateY() {
         var pos =this.body.position;
         if(pos.y > 700) {
-          Body.setPosition(random(0, 400), random(-10000, 400));
+          Body.setPosition(this.body, {x:random(0, 400), y:random(-10000, 400)});
           //console.log(pos);
         }
       }
